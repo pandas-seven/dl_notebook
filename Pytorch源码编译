@@ -1,0 +1,12 @@
+如果需要使用MPI, 那么Pytorch就必须要从源码来编译
+
+1. 安装好Anaconda, 直接去管网下载最新版本
+2. 基于base创建新的环境, 执行指令conda create -n ai --clone base & source activate ai
+3. Follow Pytorch Doc: https://github.com/pytorch/pytorch#from-source
+4. 安装dependency, 大部分dependency都已经ready, 我这边的环境是还需要install mkl-include & cmake & mkldnn
+5. 如果需要离线安装, 则参考下面的步骤
+5.1. 去https://anaconda.org/ search相应的package name, 然后下载
+5.2. 执行conda install package
+6. Download Pytorch Source Code: git clone --recursive https://github.com/pytorch/pytorch & cd pytorch
+7. 执行python setup.py install
+8. 出现了error, 找不到libuv.so.1, 根据步骤5 install之后再执行7
